@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import Navbar from "./components/layout/Navbar";
+
 class App extends Component {
   render() {
-    const name = "Hetorus NL";
-    const showName = true;
-    const loading = false;
-
     return (
       <div className="App">
-        {loading ? <h4>Loading...</h4> : <h1>Hello {showName && name}</h1>}
+        <Navbar />
+        <h1>Hello</h1>
       </div>
     );
   }
