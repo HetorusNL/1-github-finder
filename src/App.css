@@ -2,11 +2,11 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --primary-color: #3545dc;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --foreground-color: #ffffff;
+  --background-color: #121212;
 }
 
 * {
@@ -19,8 +19,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
 }
 
 a {
@@ -75,7 +75,7 @@ img {
 }
 
 .text-dark {
-  color: var(--dark-color);
+  color: var(--foreground-color);
 }
 
 .text-success {
@@ -198,8 +198,8 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--light-color);
-  color: #333;
+  background: var(--background-color);
+  color: var(--foreground-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -232,8 +232,8 @@ img {
   padding: 0.2rem 0.7rem;
   text-align: center;
   margin: 0.3rem;
-  background: var(--light-color);
-  color: #333;
+  background: var(--background-color);
+  color: var(--foreground-color);
   border-radius: 5px;
 }
 
@@ -241,8 +241,8 @@ img {
   padding: 0.7rem;
   margin: 1rem 0;
   opacity: 0.9;
-  background: var(--light-color);
-  color: #333;
+  background: var(--primary-color);
+  color: var(--foreground-color);
 }
 
 .btn-primary,
@@ -250,23 +250,15 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
-  color: #fff;
-}
-
-.btn-light,
-.bg-light,
-.badge-light,
-.alert-light {
-  background: var(--light-color);
-  color: #333;
+  color: var(--foreground-color);
 }
 
 .btn-dark,
 .bg-dark,
 .badge-dark,
 .alert-dark {
-  background: var(--dark-color);
-  color: #fff;
+  background: var(--background-color);
+  color: var(--foreground-color);
 }
 
 .btn-danger,
@@ -274,7 +266,7 @@ img {
 .badge-danger,
 .alert-danger {
   background: var(--danger-color);
-  color: #fff;
+  color: var(--foreground-color);
 }
 
 .btn-success,
@@ -282,25 +274,20 @@ img {
 .badge-success,
 .alert-success {
   background: var(--success-color);
-  color: #fff;
+  color: var(--foreground-color);
 }
 
 .btn-white,
 .bg-white,
 .badge-white,
 .alert-white {
-  background: #fff;
-  color: #333;
+  background: var(--background-color);
+  color: var(--foreground-color);
   border: #ccc solid 1px;
 }
 
 .btn:hover {
   opacity: 0.8;
-}
-
-.bg-light,
-.badge-light {
-  border: #ccc solid 1px;
 }
 
 .round-img {
@@ -343,7 +330,7 @@ table td {
 }
 
 table th {
-  background: var(--light-color);
+  background: var(--background-color);
 }
 
 /* Navbar */
@@ -363,13 +350,13 @@ table th {
 }
 
 .navbar a {
-  color: #fff;
+  color: var(--foreground-color);
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
-  color: var(--light-color);
+  color: var(--foreground-color);
 }
 
 .navbar .welcome span {
