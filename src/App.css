@@ -6,7 +6,9 @@
   --danger-color: #dc3545;
   --success-color: #28a745;
   --foreground-color: #ffffff;
-  --background-color: #121212;
+  --background-color: #000000;
+  --surface-color: rgba(255, 255, 255, 0.14);
+  --surface-color-hover: rgba(255, 255, 255, 0.16);
 }
 
 * {
@@ -29,7 +31,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: var(--foreground-color);
 }
 
 ul {
@@ -198,7 +200,7 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--background-color);
+  background: var(--surface-color);
   color: var(--foreground-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
@@ -232,7 +234,7 @@ img {
   padding: 0.2rem 0.7rem;
   text-align: center;
   margin: 0.3rem;
-  background: var(--background-color);
+  background: var(--surface-color);
   color: var(--foreground-color);
   border-radius: 5px;
 }
@@ -257,7 +259,7 @@ img {
 .bg-dark,
 .badge-dark,
 .alert-dark {
-  background: var(--background-color);
+  background: var(--surface-color);
   color: var(--foreground-color);
 }
 
@@ -281,13 +283,13 @@ img {
 .bg-white,
 .badge-white,
 .alert-white {
-  background: var(--background-color);
+  background: var(--surface-color);
   color: var(--foreground-color);
   border: #ccc solid 1px;
 }
 
 .btn:hover {
-  opacity: 0.8;
+  background: var(--surface-color-hover);
 }
 
 .round-img {
@@ -330,7 +332,7 @@ table td {
 }
 
 table th {
-  background: var(--background-color);
+  background: var(--surface-color);
 }
 
 /* Navbar */
