@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Search extends Component {
   state = {
-    username: ""
+    text: ""
+  };
+
+  static propTypes = {
+    searchUsers: PropTypes.func.isRequired
   };
 
   onChange = e => {
@@ -11,7 +16,8 @@ class Search extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state.username);
+    this.props.searchUsers(this.state.text);
+    this.setState({ text: "" });
   };
 
   render() {
@@ -20,8 +26,8 @@ class Search extends Component {
         <form onSubmit={this.onSubmit} className="form">
           <input
             type="text"
-            name="username"
-            placeholder="Username"
+            name="text"
+            placeholder="Search User..."
             value={this.state.text}
             onChange={this.onChange}
           />
