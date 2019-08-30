@@ -2,14 +2,14 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #303f9f;
+  --primary-color: #4527a0;
   --danger-color: #dc3545;
   --success-color: #28a745;
   --light-color: #ffffff;
   --dark-color: #000000;
   --dark-surface-color: rgba(255, 255, 255, 0.12);
   --light-surface-color: rgba(0, 0, 0, 0.12);
-  --primary-hover-color: #5965b2;
+  --primary-hover-color: #6a52b3;
 }
 
 * {
@@ -343,7 +343,7 @@ table th {
   padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   margin-bottom: 1rem;
 }
 
