@@ -2,13 +2,14 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #3545dc;
+  --primary-color: #303f9f;
   --danger-color: #dc3545;
   --success-color: #28a745;
-  --foreground-color: #ffffff;
-  --background-color: #000000;
-  --surface-color: rgba(255, 255, 255, 0.14);
-  --surface-color-hover: rgba(255, 255, 255, 0.16);
+  --light-color: #ffffff;
+  --dark-color: #000000;
+  --dark-surface-color: rgba(255, 255, 255, 0.12);
+  --light-surface-color: rgba(0, 0, 0, 0.12);
+  --primary-hover-color: #5965b2;
 }
 
 * {
@@ -21,8 +22,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: var(--background-color);
-  color: var(--foreground-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 a {
@@ -31,7 +32,7 @@ a {
 }
 
 a:hover {
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
 ul {
@@ -77,7 +78,7 @@ img {
 }
 
 .text-dark {
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
 .text-success {
@@ -114,8 +115,9 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
-  margin: 0.7rem 0;
+  background: var(--dark-surface-color);
+  margin: 0rem;
+  border-radius: 2.5px;
 }
 
 /* List */
@@ -200,8 +202,8 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--surface-color);
-  color: var(--foreground-color);
+  background: var(--primary-color);
+  color: var(--light-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -234,8 +236,8 @@ img {
   padding: 0.2rem 0.7rem;
   text-align: center;
   margin: 0.3rem;
-  background: var(--surface-color);
-  color: var(--foreground-color);
+  background: var(--dark-surface-color);
+  color: var(--light-color);
   border-radius: 5px;
 }
 
@@ -244,23 +246,21 @@ img {
   margin: 1rem 0;
   opacity: 0.9;
   background: var(--primary-color);
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
-.btn-primary,
 .bg-primary,
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
-.btn-dark,
 .bg-dark,
 .badge-dark,
 .alert-dark {
-  background: var(--surface-color);
-  color: var(--foreground-color);
+  background: var(--primary-color);
+  color: var(--light-color);
 }
 
 .btn-danger,
@@ -268,7 +268,7 @@ img {
 .badge-danger,
 .alert-danger {
   background: var(--danger-color);
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
 .btn-success,
@@ -276,20 +276,20 @@ img {
 .badge-success,
 .alert-success {
   background: var(--success-color);
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
 .btn-white,
 .bg-white,
 .badge-white,
 .alert-white {
-  background: var(--surface-color);
-  color: var(--foreground-color);
+  background: var(--dark-surface-color);
+  color: var(--light-color);
   border: #ccc solid 1px;
 }
 
 .btn:hover {
-  background: var(--surface-color-hover);
+  background: var(--primary-hover-color);
 }
 
 .round-img {
@@ -332,7 +332,7 @@ table td {
 }
 
 table th {
-  background: var(--surface-color);
+  background: var(--dark-surface-color);
 }
 
 /* Navbar */
@@ -352,13 +352,13 @@ table th {
 }
 
 .navbar a {
-  color: var(--foreground-color);
+  color: var(--light-color);
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
-  color: var(--foreground-color);
+  color: var(--light-color);
 }
 
 .navbar .welcome span {
