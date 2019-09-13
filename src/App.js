@@ -3,13 +3,15 @@ import axios from "axios";
 import "./App.css";
 
 import Navbar from "./components/layout/Navbar";
+import Alert from "./components/layout/Alert";
 import Users from "./components/users/Users";
 import Search from "./components/users/Search";
 
 class App extends Component {
   state = {
     users: [],
-    loading: false
+    loading: false,
+    alert: null
   };
 
   // initially search for the first X users by their id when the page loads
@@ -35,6 +37,20 @@ class App extends Component {
     this.setState({ users: [], loading: false });
   };
 
+  // show an alert
+  setAlert = (msg, type) => {
+    // store the msg and type information in alert object in state
+    this.setState({ alert: { msg, type } });
+    // if the timeout was already set, unset the timeout to reset it to the full period
+    if (this.timeoutID !== null) {
+      clearTimeout(this.timeoutID);
+    }
+    // set the timeout and store the timeout ID
+    this.timeoutID = setTimeout(() => {
+      this.setState({ alert: null });
+    }, 5000);
+  };
+
   render() {
     const { users, loading } = this.state;
 
@@ -43,10 +59,12 @@ class App extends Component {
         <Navbar />
         <div className="container">
           <h1>Hello</h1>
+          <Alert alert={this.state.alert} />
           <Search
             searchUsers={this.searchUsers}
             clearUsers={this.clearUsers}
             showClear={users.length > 0}
+            setAlert={this.setAlert}
           />
           <Users loading={loading} users={users} />
         </div>
