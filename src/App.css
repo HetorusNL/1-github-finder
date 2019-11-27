@@ -285,7 +285,7 @@ img {
 .alert-white {
   background: var(--dark-surface-color);
   color: var(--light-color);
-  border: #ccc solid 1px;
+  /* border: #ccc solid 1px; */
 }
 
 .btn:hover {
