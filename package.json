@@ -1,17 +1,17 @@
 {
   "name": "1-github-finder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "acorn": "^7.1.1",
     "axios": "^0.19.0",
     "eslint-utils": "^1.4.2",
+    "minimist": "^1.2.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
-    "serialize-javascript": "^2.1.2",
-    "acorn": "^7.1.1",
-    "minimist": "^1.2.3"
+    "serialize-javascript": "^2.1.2"
   },
   "resolutions": {
     "kind-of": "^6.0.3",
