@@ -19,9 +19,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "yarn generate-build-version",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-build-version": "node generate-build-version",
+    "version": "yarn build && git add .",
+    "postversion": "git push --tags && git push",
+    "deploy": "./deploy.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
