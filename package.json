@@ -16,7 +16,10 @@
   "resolutions": {
     "kind-of": "^6.0.3",
     "dot-prop": "^5.1.1",
-    "elliptic": "^6.5.3"
+    "elliptic": "^6.5.3",
+    "node-forge": "^0.10.0",
+    "yargs-parser": "^13.1.2",
+    "http-proxy": "1.18.1"
   },
   "scripts": {
     "start": "react-scripts start",
