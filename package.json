@@ -19,7 +19,8 @@
     "elliptic": "^6.5.3",
     "node-forge": "^0.10.0",
     "yargs-parser": "^13.1.2",
-    "http-proxy": "1.18.1"
+    "http-proxy": "1.18.1",
+    "object-path": "^0.11.5"
   },
   "scripts": {
     "start": "react-scripts start",
