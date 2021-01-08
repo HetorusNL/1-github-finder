@@ -1,6 +1,6 @@
 {
   "name": "1-github-finder",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "acorn": "^7.1.1",
