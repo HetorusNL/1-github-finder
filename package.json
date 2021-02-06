@@ -5,6 +5,7 @@
   "dependencies": {
     "acorn": "^7.1.1",
     "axios": "^0.21.1",
+    "elliptic": "^6.5.3",
     "eslint-utils": "^1.4.2",
     "minimist": "^1.2.3",
     "react": "^16.9.0",
