@@ -120,6 +120,11 @@ img {
   border-radius: 2.5px;
 }
 
+.card-margin {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;

@@ -14,35 +14,49 @@ class App extends Component {
   state = {
     users: [],
     user: {},
+    repos: [],
     loading: false,
-    alert: null
+    alert: null,
+  };
+
+  axiosGet = async (url) => {
+    return axios.get(url, {
+      headers: {
+        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      },
+    });
   };
 
   // initially search for the first X users by their id when the page loads
   async componentDidMount() {
     this.setState({ loading: true });
-    const res = await axios.get(
-      `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-    );
+    const res = await this.axiosGet(`https://api.github.com/users`);
     this.setState({ users: res.data, loading: false });
   }
 
   // search github users via the github api
-  searchUsers = async text => {
+  searchUsers = async (text) => {
     this.setState({ loading: true });
-    const res = await axios.get(
-      `https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    const res = await this.axiosGet(
+      `https://api.github.com/search/users?q=${text}`
     );
     this.setState({ users: res.data.items, loading: false });
   };
 
   // get a single user via the github api
-  getUser = async username => {
+  getUser = async (username) => {
     this.setState({ loading: true });
-    const res = await axios.get(
-      `https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-    );
+    const res = await this.axiosGet(`https://api.github.com/users/${username}`);
     this.setState({ user: res.data, loading: false });
+  };
+
+  // get users repos
+  getUserRepos = async (username) => {
+    this.setState({ loading: true });
+    const res = await this.axiosGet(
+      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`
+    );
+    this.setState({ repos: res.data, loading: false });
   };
 
   // clear users from the state
@@ -65,7 +79,7 @@ class App extends Component {
   };
 
   render() {
-    const { users, user, loading } = this.state;
+    const { users, user, repos, loading } = this.state;
 
     return (
       <Router>
@@ -77,7 +91,7 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={props => (
+                render={(props) => (
                   <Fragment>
                     <Search
                       searchUsers={this.searchUsers}
@@ -92,11 +106,13 @@ class App extends Component {
               <Route
                 exact
                 path="/user/:login"
-                render={props => (
+                render={(props) => (
                   <User
                     {...props}
                     getUser={this.getUser}
+                    getUserRepos={this.getUserRepos}
                     user={user}
+                    repos={repos}
                     loading={loading}
                   />
                 )}
