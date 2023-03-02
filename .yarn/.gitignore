@@ -1,0 +1,3 @@
+# at least for now, ignore the cache folder and the install-state
+cache/
+install-state.gz

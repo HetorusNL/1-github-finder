@@ -1,8 +1,8 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"remoteAuthority": "wsl+Ubuntu"
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "remoteAuthority": "wsl+Ubuntu"
 }
