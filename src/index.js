@@ -6,10 +6,12 @@ import GithubState from "./context/github/GithubState";
 import App from "./App";
 
 ReactDOM.render(
-  <AlertState>
-    <GithubState>
-      <App />
-    </GithubState>
-  </AlertState>,
+  <React.StrictMode>
+    <AlertState>
+      <GithubState>
+        <App />
+      </GithubState>
+    </AlertState>
+  </React.StrictMode>,
   document.getElementById("root")
 );
