@@ -1,14 +1,14 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import GithubContext from "./context/github/GithubContext";
 import About from "./components/pages/About";
 import Alert from "./components/layout/Alert";
+import Home from "./components/pages/Home";
 import Navbar from "./components/layout/Navbar";
-import Search from "./components/users/Search";
+import NotFound from "./components/pages/NotFound";
 import User from "./components/users/User";
-import Users from "./components/users/Users";
 
 const App = () => {
   const githubContext = useContext(GithubContext);
@@ -29,18 +29,10 @@ const App = () => {
         <div className="container">
           <Alert />
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <Fragment>
-                  <Search />
-                  <Users />
-                </Fragment>
-              )}
-            />
+            <Route exact path="/" component={Home} />
             <Route exact path="/user/:login" component={User} />
             <Route exact path="/about" component={About} />
+            <Route component={NotFound} />
           </Switch>
         </div>
       </div>
