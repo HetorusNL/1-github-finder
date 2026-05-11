@@ -22,9 +22,10 @@ const GithubState = (props) => {
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
   const axiosGet = async (url) => {
+    console.log("Making API call to:", url, "with token:", import.meta.env);
     return axios.get(url, {
       headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+        Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
       },
     });
   };

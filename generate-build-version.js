@@ -12,6 +12,6 @@ fs.writeFile("./public/meta.json", JSON.stringify(jsonData), "utf8", (err) => {
   }
 
   console.log(
-    `meta.json file has been saved with version number ${jsonData.version}`
+    `meta.json file has been saved with version number ${jsonData.version}`,
   );
 });

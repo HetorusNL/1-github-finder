@@ -2,32 +2,20 @@
   "name": "1-github-finder",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "yarn@3.4.1",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "prebuild": "yarn generate-build-version",
-    "build": "yarn prebuild && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "prebuild": "node generate-build-version",
+    "build": "npm run prebuild && vite build",
     "generate-build-version": "node generate-build-version",
-    "release-patch": "yarn version patch && yarn postversion",
-    "release-minor": "yarn version minor && yarn postversion",
-    "release-major": "yarn version major && yarn postversion",
-    "postversion": "yarn build && yarn git-script",
+    "release-patch": "npm version patch && npm run postversion",
+    "release-minor": "npm version minor && npm run postversion",
+    "release-major": "npm version major && npm run postversion",
+    "postversion": "npm run build && npm run git-script",
     "git-script": "node git-script",
     "deploy": "./deploy.sh"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -40,5 +28,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.11"
+  },
+  "dependencies": {
+    "axios": "^1.16.0",
+    "prop-types": "^15.8.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^7.15.0"
   }
 }

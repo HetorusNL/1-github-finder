@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import GithubContext from "./context/github/GithubContext";
@@ -28,12 +28,12 @@ const App = () => {
         <Navbar />
         <div className="container">
           <Alert />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/user/:login" component={User} />
-            <Route exact path="/about" component={About} />
-            <Route component={NotFound} />
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/user/:login" element={<User />} />
+            <Route exact path="/about" element={<About />} />
+            <Route element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </Router>

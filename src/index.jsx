@@ -1,17 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, {StrictMode} from "react";
+import { createRoot } from "react-dom/client";
 
 import AlertState from "./context/alert/AlertState";
 import GithubState from "./context/github/GithubState";
-import App from "./App";
+import App from "./App.jsx";
 
-ReactDOM.render(
-  <React.StrictMode>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
     <AlertState>
       <GithubState>
         <App />
       </GithubState>
     </AlertState>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
